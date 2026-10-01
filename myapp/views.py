@@ -165,7 +165,7 @@ def checkusername(request):
     else:
         return JsonResponse({'status':'no'})
     
-@login_required(login_url='/myapp/login_page/')
+# @login_required(login_url='/myapp/login_page/')
 def customer_home(request):
     ob=Request.objects.filter(CUSTOMER__LOGIN=request.user,status='payment pending').count()
     a=Customer.objects.get(LOGIN=request.user)

@@ -41,6 +41,7 @@ class Complaints(models.Model):
     REQUEST=models.ForeignKey(Request,on_delete=models.CASCADE)
     CUSTOMER=models.ForeignKey(Customer,on_delete=models.CASCADE)
     complaints=models.TextField()
+    polarity=models.CharField(max_length=100)
     status=models.TextField(default='pending')
     date=models.DateTimeField()
 
